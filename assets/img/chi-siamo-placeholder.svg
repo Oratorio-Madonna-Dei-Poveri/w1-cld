@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <rect width="900" height="700" fill="#EAF0EC"/>
+  <rect x="24" y="24" width="852" height="652" rx="28" fill="none" stroke="#4D7C63" stroke-width="3" stroke-dasharray="10 8"/>
+  <circle cx="450" cy="280" r="90" fill="#4D7C63" opacity="0.18"/>
+  <path d="M400 330 q50 -60 100 0 q10 60 -50 90 q-60 -30 -50 -90 Z" fill="#4D7C63" opacity="0.35"/>
+  <text x="450" y="470" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#2f4a3d" text-anchor="middle">FOTO PLACEHOLDER</text>
+  <text x="450" y="508" font-family="Arial, sans-serif" font-size="18" fill="#3f5c4d" text-anchor="middle">Sostituisci con una foto del cortile o di un'attività</text>
+</svg>

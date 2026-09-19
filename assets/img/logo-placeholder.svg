@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#lg)"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.5"/>
+  <text x="100" y="95" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">MdP</text>
+  <text x="100" y="128" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" opacity="0.85" text-anchor="middle">LOGO PLACEHOLDER</text>
+</svg>

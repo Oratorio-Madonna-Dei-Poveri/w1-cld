@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizie - Oratorio Madonna dei Poveri</title>
+    <meta name="description" content="Tutte le notizie e gli avvisi dell'Oratorio Madonna dei Poveri di Collegno.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { blue: '#1E3A8A', sky: '#0284C7', amber: '#D97706', sage: '#4D7C63' }
+                    },
+                    fontFamily: {
+                        heading: ['Fraunces', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- HEADER E NAVIGAZIONE -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/img/logo-placeholder.svg" alt="Logo Oratorio Madonna dei Poveri" class="w-11 h-11 rounded-2xl shadow-md group-hover:scale-105 transition-transform">
+                    <div>
+                        <span class="block text-lg font-extrabold text-slate-900 tracking-tight font-heading leading-none">Madonna dei Poveri</span>
+                        <span class="text-xs font-semibold text-brand-sky tracking-wide">Oratorio · Collegno</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center gap-0.5 font-medium text-sm text-slate-600">
+                    <a href="index.html#home" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Home</a>
+                    <a href="index.html#chi-siamo" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Chi Siamo</a>
+                    <a href="index.html#attivita" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Attività</a>
+                    <a href="index.html#eventi" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Eventi</a>
+                    <a href="index.html#orari" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Orari</a>
+                    <a href="notizie.html" class="px-3 py-2 rounded-xl text-brand-blue bg-slate-100/80">Notizie</a>
+                    <a href="index.html#partecipa" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Partecipa</a>
+                    <a href="index.html#contatti" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Contatti</a>
+                </nav>
+
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="index.html#contatti" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-white bg-brand-blue hover:bg-blue-900 shadow-md hover:shadow-lg transition-all">
+                        <i class="fa-solid fa-map-location-dot mr-2"></i> Vieni a Trovarci
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" type="button" class="xl:hidden p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Apri Menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
+            <a href="index.html#home" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Home</a>
+            <a href="index.html#chi-siamo" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Chi Siamo</a>
+            <a href="index.html#attivita" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Attività</a>
+            <a href="index.html#eventi" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Eventi</a>
+            <a href="index.html#orari" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Orari</a>
+            <a href="notizie.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-brand-blue bg-slate-50">Notizie</a>
+            <a href="index.html#partecipa" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Partecipa</a>
+            <a href="index.html#faq" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">FAQ</a>
+            <a href="index.html#contatti" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Dove Siamo & Contatti</a>
+        </div>
+    </header>
+
+    <!-- INTESTAZIONE PAGINA -->
+    <section class="py-14 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <span class="text-brand-amber font-bold text-xs tracking-wide bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60">Notizie</span>
+            <h1 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Tutte le Notizie dell'Oratorio</h1>
+            <p class="text-slate-600 text-base max-w-2xl mx-auto">Avvisi, eventi e comunicazioni della comunità dell'Oratorio Madonna dei Poveri.</p>
+        </div>
+    </section>
+
+    <!-- FILTRI PER CATEGORIA (generati dinamicamente) -->
+    <section class="py-8 bg-slate-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="news-filter-buttons" class="flex flex-wrap items-center justify-center gap-2"></div>
+        </div>
+    </section>
+
+    <!-- GRIGLIA NOTIZIE -->
+    <main class="flex-1 py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="news-full-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div class="text-center mt-12">
+                <button id="load-more-btn" class="hidden px-8 py-3.5 rounded-2xl font-bold text-brand-blue bg-white border border-slate-200 hover:bg-slate-100 shadow-sm transition-all text-sm">
+                    Carica altre notizie
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Oratorio Madonna dei Poveri - Collegno. Tutti i diritti riservati.</p>
+                <a href="index.html" class="hover:text-white transition-colors">Torna alla Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script>
+        const PAGE_SIZE = 9;
+        let ALL_NEWS = [];
+        let VISIBLE_COUNT = PAGE_SIZE;
+        let ACTIVE_CATEGORY = 'all';
+
+        function renderNewsGrid() {
+            const grid = document.getElementById('news-full-grid');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const filtered = ACTIVE_CATEGORY === 'all'
+                ? ALL_NEWS
+                : ALL_NEWS.filter(n => n.category === ACTIVE_CATEGORY);
+
+            if (!filtered.length) {
+                grid.innerHTML = newsEmptyStateHTML('Nessuna notizia trovata in questa categoria.');
+                loadMoreBtn.classList.add('hidden');
+                return;
+            }
+
+            const toShow = filtered.slice(0, VISIBLE_COUNT);
+            grid.innerHTML = toShow.map(newsCardHTML).join('');
+            loadMoreBtn.classList.toggle('hidden', VISIBLE_COUNT >= filtered.length);
+        }
+
+        function renderFilterButtons() {
+            const wrap = document.getElementById('news-filter-buttons');
+            const categories = Array.from(new Set(ALL_NEWS.map(n => n.category)));
+            const buttons = [{ key: 'all', label: 'Tutte' }, ...categories.map(c => ({ key: c, label: c }))];
+
+            wrap.innerHTML = buttons.map(b => `
+                <button data-cat="${b.key}" class="news-filter-btn px-5 py-2.5 rounded-2xl font-medium text-sm transition-all ${b.key === 'all' ? 'bg-brand-blue text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'}">
+                    ${b.label}
+                </button>`).join('');
+
+            wrap.querySelectorAll('.news-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    ACTIVE_CATEGORY = btn.getAttribute('data-cat');
+                    VISIBLE_COUNT = PAGE_SIZE;
+                    wrap.querySelectorAll('.news-filter-btn').forEach(b => {
+                        b.classList.remove('bg-brand-blue', 'text-white', 'shadow-md');
+                        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    });
+                    btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    btn.classList.add('bg-brand-blue', 'text-white', 'shadow-md');
+                    renderNewsGrid();
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('news-full-grid');
+            grid.innerHTML = Array(6).fill(newsSkeletonHTML()).join('');
+            try {
+                ALL_NEWS = await loadAllNews();
+            } catch (err) {
+                ALL_NEWS = [];
+            }
+            if (!ALL_NEWS.length) {
+                grid.innerHTML = newsEmptyStateHTML('Non ci sono ancora notizie pubblicate.');
+                return;
+            }
+            renderFilterButtons();
+            renderNewsGrid();
+
+            document.getElementById('load-more-btn').addEventListener('click', () => {
+                VISIBLE_COUNT += PAGE_SIZE;
+                renderNewsGrid();
+            });
+        });
+    </script>
+</body>
+</html>

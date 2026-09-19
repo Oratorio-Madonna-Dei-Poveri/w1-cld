@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oratorio Madonna dei Poveri - Collegno</title>
+    <meta name="description" content="Oratorio Madonna dei Poveri, Via Amerigo Vespucci 17, Collegno (TO). Sport, catechismo, attività e comunità per bambini e ragazzi.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fraunces (titoli, calore ed identità) e Inter (testo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+    <!-- FontAwesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stile condiviso -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1E3A8A',
+                            sky: '#0284C7',
+                            amber: '#D97706',
+                            sage: '#4D7C63'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Fraunces', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- HEADER E NAVIGAZIONE -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo e Titolo -->
+                <a href="#home" class="flex items-center gap-3 group shrink-0">
+                    <!-- PLACEHOLDER LOGO: sostituisci assets/img/logo-placeholder.svg con il logo reale -->
+                    <img src="assets/img/logo-placeholder.svg" alt="Logo Oratorio Madonna dei Poveri" class="w-11 h-11 rounded-2xl shadow-md group-hover:scale-105 transition-transform">
+                    <div>
+                        <span class="block text-lg font-extrabold text-slate-900 tracking-tight font-heading leading-none">
+                            Madonna dei Poveri
+                        </span>
+                        <span class="text-xs font-semibold text-brand-sky tracking-wide">
+                            Oratorio · Collegno
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden xl:flex items-center gap-0.5 font-medium text-sm text-slate-600">
+                    <a href="#home" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Home</a>
+                    <a href="#chi-siamo" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Chi Siamo</a>
+                    <a href="#attivita" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Attività</a>
+                    <a href="#eventi" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Eventi</a>
+                    <a href="#orari" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Orari</a>
+                    <a href="#notizie" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Notizie</a>
+                    <a href="#partecipa" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Partecipa</a>
+                    <a href="#contatti" class="px-3 py-2 rounded-xl hover:text-brand-blue hover:bg-slate-100/80 transition-colors">Contatti</a>
+                </nav>
+
+                <!-- Action Button Desktop -->
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="#contatti" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-white bg-brand-blue hover:bg-blue-900 shadow-md hover:shadow-lg transition-all">
+                        <i class="fa-solid fa-map-location-dot mr-2"></i> Vieni a Trovarci
+                    </a>
+                </div>
+
+                <!-- Hamburger Button Mobile -->
+                <button id="mobile-menu-btn" type="button" class="xl:hidden p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Apri Menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
+            <a href="#home" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Home</a>
+            <a href="#chi-siamo" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Chi Siamo</a>
+            <a href="#attivita" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Attività</a>
+            <a href="#eventi" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Eventi</a>
+            <a href="#orari" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Orari</a>
+            <a href="#notizie" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Notizie</a>
+            <a href="#partecipa" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Partecipa</a>
+            <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">FAQ</a>
+            <a href="#contatti" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Dove Siamo & Contatti</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden text-white">
+        <!-- Sfondo: immagine placeholder sfocata + overlay per leggibilità -->
+        <div class="hero-bg-wrap">
+            <div class="hero-bg-img"></div>
+            <div class="hero-bg-overlay"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Testo Hero -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-4 py-2 rounded-full border border-white/20 text-xs sm:text-sm font-semibold">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <i class="fa-solid fa-location-dot text-brand-amber"></i> Via Amerigo Vespucci 17, Collegno
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+                        Un cortile dove crescere, giocare e credere insieme
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-100/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        L'Oratorio Madonna dei Poveri accoglie bambini e ragazzi delle scuole elementari e medie tra sport, catechismo, giochi e feste di comunità, nel pieno rispetto della dignità e della libertà di ciascuno.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#attivita" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-brand-blue bg-white hover:bg-slate-100 shadow-lg transition-all text-center">
+                            <i class="fa-solid fa-shapes mr-2"></i> Scopri le Attività
+                        </a>
+                        <a href="#partecipa" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white bg-white/10 hover:bg-white/20 border border-white/30 transition-all text-center">
+                            <i class="fa-solid fa-hand-holding-heart mr-2"></i> Come Partecipare
+                        </a>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t border-white/20">
+                        <div class="text-center lg:text-left">
+                            <div class="text-xl sm:text-2xl font-bold font-heading">Elementari</div>
+                            <div class="text-xs text-slate-200/80">Dai 5 anni</div>
+                        </div>
+                        <div class="text-center lg:text-left border-x border-white/20 px-2">
+                            <div class="text-xl sm:text-2xl font-bold font-heading">Medie</div>
+                            <div class="text-xs text-slate-200/80">1ª, 2ª, 3ª</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-xl sm:text-2xl font-bold font-heading">Estate</div>
+                            <div class="text-xs text-slate-200/80">Estate Ragazzi</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Widget "Oggi in Oratorio", generato dinamicamente in base al giorno -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10 space-y-5">
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-brand-amber flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-sun"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-heading font-bold text-slate-900 text-base">Oggi in Oratorio</h2>
+                                        <p class="text-xs text-slate-500"><span id="today-label">—</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="today-widget" class="space-y-3">
+                                <!-- Popolato via JS da assets/js/site.js in base al giorno corrente -->
+                                <div class="h-14 rounded-2xl skeleton-card"></div>
+                                <div class="h-14 rounded-2xl skeleton-card"></div>
+                            </div>
+
+                            <div class="bg-brand-blue p-4 rounded-2xl text-white text-center">
+                                <p class="text-xs opacity-90">Ti aspettiamo a Collegno!</p>
+                                <p class="text-sm font-bold mt-0.5"><i class="fa-solid fa-heart text-brand-amber mr-1"></i> Una seconda casa per i tuoi figli</p>
+                            </div>
+
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-full h-full bg-brand-amber/25 rounded-3xl -z-0 transform rotate-2"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CHI SIAMO & VALORI -->
+    <section id="chi-siamo" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-brand-sky font-bold text-xs tracking-wide bg-sky-50 px-3 py-1 rounded-full border border-sky-100">La nostra identità</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">
+                        Chi è l'Oratorio Madonna dei Poveri
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Siamo un'Associazione di Promozione Sociale (APS), Ente del Terzo Settore, legata alla parrocchia e all'Unità Pastorale di Collegno. Da anni siamo un punto di riferimento per le famiglie del quartiere: uno spazio aperto dove bambini e ragazzi crescono insieme con gioia, responsabilità e rispetto.
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Il nostro progetto educativo, fondato sui valori evangelici e sulla visione cristiana della persona, favorisce la formazione integrale dei più piccoli attraverso lo sport, il gioco, il catechismo e il dialogo costante con le famiglie.
+                    </p>
+                </div>
+                <div class="lg:col-span-6">
+                    <!-- PLACEHOLDER FOTO: sostituisci assets/img/chi-siamo-placeholder.svg con una foto reale del cortile/attività -->
+                    <img src="assets/img/chi-siamo-placeholder.svg" alt="Cortile dell'Oratorio Madonna dei Poveri" class="w-full h-auto rounded-3xl border border-slate-100 shadow-sm">
+                </div>
+            </div>
+
+            <!-- Griglia Valori -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-hands-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Accoglienza</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Un ambiente fraterno e inclusivo, nel pieno rispetto della dignità e della libertà di ogni bambino e ragazzo.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-amber-200 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-amber text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Fede e Catechesi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Percorsi di catechismo verso i sacramenti e riferimento costante al Vangelo, insieme alla comunità parrocchiale.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-sage text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-futbol"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Sport e Gioco</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Calcio, pallavolo e giochi di cortile per imparare il rispetto delle regole e il valore della squadra.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Comunità</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Feste, gite e momenti di condivisione che coinvolgono famiglie e gruppi parrocchiali tutto l'anno.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE ATTIVITÀ CON FILTRI -->
+    <section id="attivita" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-brand-amber font-bold text-xs tracking-wide bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60">Cosa facciamo</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Le Attività Settimanali</h2>
+                <p class="text-slate-600 text-base">
+                    Un'attività diversa per ogni giorno della settimana, pensata per fasce d'età.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active-filter px-5 py-2.5 rounded-2xl font-medium text-sm transition-all bg-brand-blue text-white shadow-md">
+                        Tutte
+                    </button>
+                    <button data-filter="elementari" class="filter-btn px-5 py-2.5 rounded-2xl font-medium text-sm transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-child mr-1.5 text-amber-500"></i> Elementari
+                    </button>
+                    <button data-filter="medie" class="filter-btn px-5 py-2.5 rounded-2xl font-medium text-sm transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-user-group mr-1.5 text-sky-500"></i> Medie
+                    </button>
+                    <button data-filter="comunita" class="filter-btn px-5 py-2.5 rounded-2xl font-medium text-sm transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-people-roof mr-1.5 text-brand-sage"></i> Comunità
+                    </button>
+                    <button data-filter="estate" class="filter-btn px-5 py-2.5 rounded-2xl font-medium text-sm transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-sun mr-1.5 text-emerald-500"></i> Estate Ragazzi
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="activities-grid">
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="elementari">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Elementari</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Lun 17:00–18:30</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-futbol"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Primi Calci</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Il primo approccio al calcio per i più piccoli: bambini di 5, 6 (1ª elementare) e 7 (2ª elementare) anni.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Allenatori ed educatori dedicati</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Gioco prima della competizione</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="elementari">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Elementari</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Gio 17:30–19:00</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-shoe-prints"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Calcio Elementari</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Un pomeriggio di sport e squadra per i bambini di 3ª, 4ª e 5ª elementare.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Campo dell'oratorio</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Valori del fair play</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="medie">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Medie</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Mar 17:00–18:30</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-trophy"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Calcio Medie</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Allenamenti e partite per i ragazzi di 1ª, 2ª e 3ª media.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Campo polivalente</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Spirito di squadra</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="medie">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Medie</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Ven 20:30–22:30</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-volleyball"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Pallavolo</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Serata di pallavolo per i ragazzi dalla 2ª/3ª media in poi.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Palestra dell'oratorio</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Aperta anche ai principianti</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="elementari medie">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Elementari & Medie</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Lun-Gio, pomeriggio</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hands-praying"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Percorso di Catechismo</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Il cammino verso i sacramenti, diviso per classe e per sacramento durante la settimana.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 3ª elementare → Prima Confessione (Mar)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 4ª elementare → Prima Comunione (Lun)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 5ª elementare e 1ª media → S. Cresima (Gio/Mer)</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="elementari medie">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Elementari & Medie</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Sab 15:00–17:30</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-shapes"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Sabato in Oratorio</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Attività e giochi per i ragazzi dalla 3ª elementare alla 3ª media; in parallelo, catechismo per i bambini di 1ª e 2ª elementare.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Giochi a squadre e animazione</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Primi passi di catechismo per i piccoli</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="comunita">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full">Tutta la comunità</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> Dom 11:00</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-church"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">S. Messa della Comunità</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            La Messa domenicale che riunisce famiglie, ragazzi ed educatori dell'intera comunità parrocchiale.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Aperta a tutte le famiglie</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card bg-white rounded-3xl p-6 border-2 border-emerald-400/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden" data-category="estate">
+                    <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl">In Evidenza</div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Giugno – Luglio</span>
+                            <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> 5 settimane</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-sun"></i></div>
+                        <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Estate Ragazzi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Cinque settimane tra giugno e luglio, dalla 1ª elementare alla 3ª media: giochi, laboratori e tante avventure insieme.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Dalla 1ª elementare alla 3ª media</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Iscrizioni: segui la sezione Notizie</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE EVENTI & TRADIZIONI DELL'ANNO -->
+    <section id="eventi" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <span class="text-brand-blue font-bold text-xs tracking-wide bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Il calendario dell'anno</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Eventi e Tradizioni</h2>
+                <p class="text-slate-600 text-base">
+                    Oltre alle attività settimanali, l'anno oratoriano è scandito da feste e momenti che uniscono famiglie e gruppi parrocchiali.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-pizza-slice"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Pizzata</h3>
+                    <p class="text-xs text-slate-500">Serata insieme per i ragazzi delle medie.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-music"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Serata Discoteca</h3>
+                    <p class="text-xs text-slate-500">Musica e balli per i ragazzi delle medie.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-fire"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Castagnata</h3>
+                    <p class="text-xs text-slate-500">Con tutti i gruppi parrocchiali.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-bowl-food"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Festa di San Martino</h3>
+                    <p class="text-xs text-slate-500">Polentata e tombola in oratorio.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-star"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Festa di Natale</h3>
+                    <p class="text-xs text-slate-500">Il Natale vissuto in comunità.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-masks-theater"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Festa di Carnevale</h3>
+                    <p class="text-xs text-slate-500">Maschere, coriandoli e giochi per tutti.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-compact-disc"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Festa a Tema</h3>
+                    <p class="text-xs text-slate-500">Anni 80/90, Caraibi, Cartoon... una sorpresa ogni anno.</p>
+                </div>
+                <div class="p-5 rounded-3xl bg-emerald-50 border border-emerald-200 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-sun"></i></div>
+                    <h3 class="font-heading font-bold text-slate-900 text-sm mb-1">Estate Ragazzi</h3>
+                    <p class="text-xs text-slate-500">5 settimane a giugno-luglio, per tutti dalla 1ª elementare alla 3ª media.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE ORARI SETTIMANALI -->
+    <section id="orari" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <span class="text-brand-sky font-bold text-xs tracking-wide bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Programmazione</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Orario Settimanale</h2>
+                <p class="text-slate-600 text-base">
+                    L'orario completo, giorno per giorno, delle attività ordinarie in Via Amerigo Vespucci 17.
+                </p>
+            </div>
+
+            <div id="schedule-list" class="grid md:grid-cols-2 gap-6">
+                <!-- Popolato via JS (assets/js/site.js) a partire dai dati reali dell'orario -->
+                <div class="h-40 rounded-3xl skeleton-card"></div>
+                <div class="h-40 rounded-3xl skeleton-card"></div>
+                <div class="h-40 rounded-3xl skeleton-card"></div>
+                <div class="h-40 rounded-3xl skeleton-card"></div>
+            </div>
+
+            <div class="mt-6 text-center text-xs sm:text-sm text-slate-500">
+                <p><i class="fa-solid fa-circle-info mr-1 text-brand-sky"></i> Gli orari possono subire variazioni durante i periodi festivi o le vacanze scolastiche: resta aggiornato nella sezione Notizie.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE NOTIZIE -->
+    <section id="notizie" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+                <div class="space-y-4 max-w-2xl">
+                    <span class="text-brand-amber font-bold text-xs tracking-wide bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60">Sempre aggiornati</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Ultime Notizie</h2>
+                    <p class="text-slate-600 text-base">Le comunicazioni e gli avvisi più recenti dell'Oratorio.</p>
+                </div>
+                <a href="notizie.html" class="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold text-brand-blue bg-blue-50 hover:bg-blue-100 transition-colors text-sm">
+                    Vedi tutte le notizie <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div id="home-news-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Popolato dinamicamente da assets/js/news.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE COME PARTECIPARE (senza modulo online) -->
+    <section id="partecipa" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-sage font-bold text-xs tracking-wide bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">Come partecipare</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900 leading-tight">
+                        Vieni a scoprire l'Oratorio, poi iscriviti in sede
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Non serve nessun modulo online: l'iscrizione all'Oratorio Madonna dei Poveri si perfeziona direttamente in sede, con la segreteria e gli educatori.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-8 h-8 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Vieni a trovarci</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Passa in Oratorio durante l'attività che interessa a tuo figlio/a (vedi Orari) oppure alla Messa della domenica alle 11:00.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-8 h-8 rounded-xl bg-brand-sky text-white flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Parla con noi</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Educatori e catechisti ti aiuteranno a individuare il gruppo più adatto all'età e agli interessi di tuo figlio/a.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-8 h-8 rounded-xl bg-brand-amber text-white flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Compila la scheda in segreteria</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">L'iscrizione si completa con la scheda di adesione cartacea e il versamento della quota associativa annuale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="#contatti" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-white bg-brand-blue hover:bg-blue-900 shadow-md transition-all text-sm">
+                            <i class="fa-solid fa-comments mr-1"></i> Contattaci per informazioni
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-5">
+                        <h3 class="text-xl font-heading font-bold text-slate-900">Cosa serve per iscriversi</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Scheda di adesione compilata da un genitore/tutore</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Versamento della quota associativa annuale</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Consenso al trattamento dei dati (GDPR)</li>
+                        </ul>
+
+                        <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200/80 text-amber-900 text-xs sm:text-sm space-y-2">
+                            <div class="font-bold flex items-center gap-2 text-amber-800">
+                                <i class="fa-solid fa-shield-halved text-amber-600"></i> Quota associativa & Assicurazione
+                            </div>
+                            <p class="text-slate-700 text-xs">
+                                La quota di tesseramento annuale, stabilita dal Consiglio di Amministrazione, comprende la copertura assicurativa per le attività svolte in Oratorio.
+                            </p>
+                        </div>
+
+                        <p class="text-xs text-slate-400">
+                            <i class="fa-solid fa-circle-info mr-1"></i> Orari di segreteria: <span class="font-semibold text-slate-500">[placeholder – da confermare]</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE FAQ -->
+    <section id="faq" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-brand-amber font-bold text-xs tracking-wide bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60">Domande frequenti</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Dubbi o Domande dei Genitori?</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Le risposte alle domande più comuni sull'organizzazione dell'Oratorio.</p>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between hover:bg-slate-50">
+                        <span>Quali sono i costi delle attività?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200 faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+                        Le attività ordinarie (catechismo, sport, sabato in oratorio) sono comprese nella quota associativa annuale, che include anche la copertura assicurativa. Eventi speciali come gite, feste a tema o l'Estate Ragazzi possono prevedere un contributo dedicato, comunicato di volta in volta.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between hover:bg-slate-50">
+                        <span>Come funziona il percorso di catechismo?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200 faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+                        Il catechismo è organizzato per classe, in preparazione ai sacramenti: 3ª elementare per la Prima Confessione, 4ª elementare per la Prima Comunione, 5ª elementare e 1ª media per la Santa Cresima. I bambini di 1ª e 2ª elementare iniziano il percorso il sabato pomeriggio.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between hover:bg-slate-50">
+                        <span>È obbligatoria la presenza tutti i giorni?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200 faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+                        No. Ogni famiglia può scegliere le attività a cui partecipare in base agli interessi e agli impegni di bambini e ragazzi, conciliandole con scuola e altri sport.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between hover:bg-slate-50">
+                        <span>Come ci si iscrive all'Estate Ragazzi?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200 faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+                        Le iscrizioni all'Estate Ragazzi aprono solitamente in primavera: l'apertura e le modalità vengono sempre annunciate nella sezione <a href="notizie.html" class="text-brand-blue font-semibold hover:underline">Notizie</a> di questo sito, oltre che sui canali social dell'Oratorio.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CONTATTI E DOVE SIAMO -->
+    <section id="contatti" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <span class="text-brand-sky font-bold text-xs tracking-wide bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Contatti & mappa</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900">Dove Siamo & Come Raggiungerci</h2>
+                <p class="text-slate-600 text-base">Ci trovi a Collegno, in una posizione comoda da raggiungere anche con i mezzi pubblici.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+
+                <div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-brand-amber flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-heading font-bold text-slate-900">Indirizzo Sede</h3>
+                                <p class="text-slate-600 text-sm mt-0.5">Via Amerigo Vespucci 17, 10093 Collegno (TO)</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-4 space-y-2.5">
+                            <div class="flex items-center gap-3 text-sm text-slate-600">
+                                <div class="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-train-subway"></i></div>
+                                Metropolitana di Torino, fermata <strong class="text-slate-800">Paradiso</strong>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600">
+                                <div class="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-bus"></i></div>
+                                Linee GTT <strong class="text-slate-800">33</strong> e <strong class="text-slate-800">36</strong>, fermata <strong class="text-slate-800">Macedonia</strong>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-sm shrink-0"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-medium">Telefono</div>
+                                    <!-- PLACEHOLDER: sostituisci con il numero reale -->
+                                    <a href="tel:+390000000000" class="text-sm font-bold text-slate-800 hover:text-brand-blue">[placeholder telefono]</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-sm shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-medium">Email</div>
+                                    <!-- PLACEHOLDER: sostituisci con l'indirizzo email reale -->
+                                    <a href="mailto:info@oratoriomadonnadeipoveri.it" class="text-xs font-bold text-slate-800 hover:text-brand-blue truncate block">[placeholder email]</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-4 flex items-center justify-between flex-wrap gap-3">
+                            <span class="text-xs text-slate-500 font-medium">Seguici sui Social:</span>
+                            <div class="flex items-center gap-2">
+                                <a href="https://www.facebook.com/parrocchiamdp" target="_blank" rel="noopener" aria-label="Facebook Parrocchia" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-600 flex items-center justify-center transition-colors">
+                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61551208864466" target="_blank" rel="noopener" aria-label="Facebook Oratorio" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-600 flex items-center justify-center transition-colors">
+                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                </a>
+                                <a href="https://www.instagram.com/ora_mdp/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-pink-600 hover:text-white text-slate-600 flex items-center justify-center transition-colors">
+                                    <i class="fa-brands fa-instagram text-sm"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@oratorio.mdp" target="_blank" rel="noopener" aria-label="TikTok" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-600 flex items-center justify-center transition-colors">
+                                    <i class="fa-brands fa-tiktok text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm relative min-h-[260px] flex-grow flex flex-col justify-end">
+                        <iframe
+                            class="w-full h-full min-h-[260px] border-0"
+                            src="https://maps.google.com/maps?q=Via%20Amerigo%20Vespucci%2017,%20Collegno&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mappa Oratorio Madonna dei Poveri Collegno">
+                        </iframe>
+                    </div>
+
+                </div>
+
+                <div class="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-heading font-bold text-slate-900 mb-2">Scrivici</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 mb-6">Hai domande sulle attività o vuoi parlare con don o con i responsabili? Scrivici un messaggio.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nome Completo *</label>
+                                <input type="text" id="contact-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue text-sm" placeholder="Il tuo nome">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email *</label>
+                                <input type="email" id="contact-email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue text-sm" placeholder="nome@esempio.it">
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-xs font-semibold text-slate-700 uppercase mb-1">Oggetto</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue text-sm" placeholder="Informazioni generali, Estate Ragazzi, Volontariato...">
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-xs font-semibold text-slate-700 uppercase mb-1">Messaggio *</label>
+                                <textarea id="contact-message" required rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue text-sm resize-none" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors text-sm uppercase tracking-wider shadow-md">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Invia Messaggio
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800 text-sm">
+
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-white font-bold text-lg font-heading">
+                        <img src="assets/img/logo-placeholder.svg" alt="" class="w-7 h-7 rounded-lg"> Oratorio Madonna dei Poveri
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Associazione di Promozione Sociale (APS) ed Ente del Terzo Settore della comunità di Collegno.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Link Veloci</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#chi-siamo" class="hover:text-white transition-colors">Chi Siamo</a></li>
+                        <li><a href="#attivita" class="hover:text-white transition-colors">Attività</a></li>
+                        <li><a href="#orari" class="hover:text-white transition-colors">Orari Settimanali</a></li>
+                        <li><a href="notizie.html" class="hover:text-white transition-colors">Notizie</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Oratorio Madonna dei Poveri</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-2">
+                        <i class="fa-solid fa-location-dot text-brand-amber mr-1.5"></i> Via Amerigo Vespucci 17, 10093 Collegno (TO)
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        <i class="fa-regular fa-clock text-brand-sky mr-1.5"></i> Segreteria: <span class="text-slate-300">[placeholder orari]</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Oratorio Madonna dei Poveri - Collegno. Tutti i diritti riservati.</p>
+                <p>Realizzato per la comunità di Collegno (TO)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALE DI CONFERMA -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-100 text-center space-y-5" id="modal-content">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-inner">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 font-heading" id="modal-title">Richiesta Inviata!</h3>
+            <p class="text-slate-600 text-sm leading-relaxed" id="modal-message"></p>
+            <button type="button" id="close-modal-btn" class="w-full py-3 rounded-xl font-bold text-white bg-brand-blue hover:bg-blue-900 transition-colors text-sm">
+                Ho capito, grazie!
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const homeGrid = document.getElementById('home-news-grid');
+            if (!homeGrid) return;
+            homeGrid.innerHTML = Array(3).fill(newsSkeletonHTML()).join('');
+            try {
+                const items = await loadAllNews();
+                homeGrid.innerHTML = items.length
+                    ? items.slice(0, 3).map(newsCardHTML).join('')
+                    : newsEmptyStateHTML('Non ci sono ancora notizie pubblicate.');
+            } catch (err) {
+                homeGrid.innerHTML = newsEmptyStateHTML('Non è stato possibile caricare le notizie in questo momento.');
+            }
+        });
+    </script>
+</body>
+</html>
