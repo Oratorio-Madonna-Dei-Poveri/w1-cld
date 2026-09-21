@@ -1,0 +1,77 @@
+<!--
+=====================================================================
+  TEMPLATE NOTIZIA — Oratorio Madonna dei Poveri
+  ---------------------------------------------------------------
+  COME SI USA (unica cosa da fare per pubblicare una notizia):
+
+  1. Copia questo file (TEMPLATE.html) dentro questa stessa cartella
+     (notizie/news/).
+  2. Rinomina la copia con il numero successivo a 3 cifre rispetto
+     all'ultima notizia pubblicata.
+     Esempio: se l'ultima notizia è "004.html", la nuova si chiama
+     "005.html".
+  3. Apri il nuovo file e modifica SOLO le parti indicate qui sotto:
+     - i quattro tag <meta name="news-..."> nella <head>
+     - il titolo dentro <h1>
+     - il testo dell'articolo dentro <article>
+  4. Salva. Non serve toccare nessun'altra pagina del sito: la
+     notizia comparirà automaticamente sia nella home (fra le ultime
+     3) sia nella pagina "notizie.html", in ordine di data.
+
+  Suggerimenti:
+  - Il campo "news-date" va scritto in formato AAAA-MM-GG
+    (es. 2026-10-12) ed è quello usato per ordinare le notizie.
+  - Il campo "news-category" è libero (es. "Eventi", "Catechismo",
+    "Sport", "Avvisi"...): categorie uguali vengono raggruppate nei
+    filtri della pagina "Tutte le notizie".
+  - "news-excerpt" è la breve descrizione (1-2 frasi) che appare
+    nell'anteprima della notizia.
+  - "news-image" è il percorso di un'immagine di copertina. Se non
+    ne hai una, lascia il placeholder oppure rimuovi la riga: verrà
+    usata un'immagine generica automaticamente.
+  - Dentro <article> puoi usare paragrafi <p>, titoli <h2>, elenchi
+    <ul>/<ol> e link <a>: verranno mostrati con lo stile del sito.
+=====================================================================
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Titolo della notizia</title>
+
+    <!-- ▼▼▼ MODIFICA QUESTI 4 CAMPI ▼▼▼ -->
+    <meta name="news-title" content="Titolo della notizia">
+    <meta name="news-date" content="2026-01-01">
+    <meta name="news-category" content="Avvisi">
+    <meta name="news-excerpt" content="Una breve descrizione della notizia, in una o due frasi.">
+    <meta name="news-image" content="../../assets/img/news-placeholder.svg">
+    <!-- ▲▲▲ FINE CAMPI DA MODIFICARE ▲▲▲ -->
+</head>
+<body>
+
+<!-- ▼▼▼ MODIFICA IL TITOLO E IL TESTO QUI SOTTO ▼▼▼ -->
+<article>
+    <h1>Titolo della notizia</h1>
+    <p>
+        Scrivi qui il testo della notizia. Puoi usare più paragrafi come
+        questo per raccontare con calma quello che è successo o che sta
+        per succedere in Oratorio.
+    </p>
+    <h2>Un eventuale sottotitolo</h2>
+    <p>
+        Altro testo. Puoi anche aggiungere un elenco puntato, ad esempio
+        per indicare orari o cosa portare:
+    </p>
+    <ul>
+        <li>Primo punto</li>
+        <li>Secondo punto</li>
+        <li>Terzo punto</li>
+    </ul>
+    <p>
+        Per maggiori informazioni potete <a href="../../index.html#contatti">contattare la segreteria</a>.
+    </p>
+</article>
+<!-- ▲▲▲ FINE TESTO DA MODIFICARE ▲▲▲ -->
+
+</body>
+</html>
